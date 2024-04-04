@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2024 at 12:32 PM
+-- Generation Time: Apr 04, 2024 at 10:53 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -71,6 +71,7 @@ CREATE TABLE `products` (
   `description` text NOT NULL,
   `price` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
+  `img` varchar(500) NOT NULL,
   `categories_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -79,9 +80,9 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `qty`, `categories_id`, `brand_id`) VALUES
-(1, 'Nike Air Max Dn', 'Say hello to the next generation of Air technology. The Air Max Dn features our Dynamic Air unit system of dual-pressure tubes, creating a reactive sensation with every step. This results in a futuristic design that\'s comfortable enough to wear from day to night. Go ahead—Feel the Unreal.', 2379000, 10, 1, 1),
-(2, 'Sport T-Shirt', 'A closet staple for any casual occasion. This soft cotton tee features a bold raised adidas Badge of Sport logo on the chest, perfect for making a stylish statement. Pair with jeans for a laid-back weekend brunch or dress it up with tailored shorts for a night on the town. Wherever life takes you, this tee is ready to go. The cotton in this product has been sourced through Better Cotton. Better Cotton is sourced via a chain of custody model called mass balance. This means that Better Cotton is not physically traceable to end products. Find out more here: https://bettercotton.org/who-we-are/our-logo/', 700000, 30, 2, 2);
+INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `qty`, `img`, `categories_id`, `brand_id`) VALUES
+(1, 'Nike Air Max Dn', 'Say hello to the next generation of Air technology. The Air Max Dn features our Dynamic Air unit system of dual-pressure tubes, creating a reactive sensation with every step. This results in a futuristic design that\'s comfortable enough to wear from day to night. Go ahead—Feel the Unreal.', 2379000, 10, 'images/nike-air-max.jpg', 1, 1),
+(2, 'Sport T-Shirt', 'A closet staple for any casual occasion. This soft cotton tee features a bold raised adidas Badge of Sport logo on the chest, perfect for making a stylish statement. Pair with jeans for a laid-back weekend brunch or dress it up with tailored shorts for a night on the town. Wherever life takes you, this tee is ready to go. The cotton in this product has been sourced through Better Cotton. Better Cotton is sourced via a chain of custody model called mass balance. This means that Better Cotton is not physically traceable to end products. Find out more here: https://bettercotton.org/who-we-are/our-logo/', 700000, 30, 'images/adidas-t-shirt.jpg', 2, 2);
 
 --
 -- Indexes for dumped tables
@@ -125,7 +126,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
